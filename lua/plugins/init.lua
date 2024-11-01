@@ -64,6 +64,22 @@ return require('packer').startup(function(use)
     end
   }
 
+    use {
+  'akinsho/toggleterm.nvim',  -- Terminal plugin to manage floating terminals
+  tag = 'v2.*',
+  config = function()
+    require("toggleterm").setup({
+      direction = "float",  -- Set floating terminal as default
+      float_opts = {
+        border = "curved",  -- Set the border style to improve aesthetics
+        width = 100,
+        height = 30,
+      },
+    })
+  end
+}
+
+
   if packer_bootstrap then
     require('packer').sync()
   end
