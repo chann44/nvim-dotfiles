@@ -78,6 +78,20 @@ return require('packer').startup(function(use)
     })
   end
 }
+    
+    use {
+    'tris203/precognition.nvim',
+    config = function()
+      require('precognition').setup({
+        -- Configuration options for precognition.nvim
+        -- Adjust these options based on the plugin's documentation
+        enable = true,
+        predictive_mode = true,
+        max_predictions = 3,
+        -- Add any other specific settings
+      })
+    end
+  }
 
 
   if packer_bootstrap then
